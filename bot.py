@@ -1,5 +1,8 @@
 import discord
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 client = discord.Client()
 
 
@@ -74,5 +77,5 @@ async def on_raw_reaction_remove(payload):
         await member.remove_roles(role)
 
 
-client.run("NjgxODI5NDk2NDU4MDUxNTk1.XlUJdA._XsWzF4wewkLj-sCRR3RSnBICik")
+client.run(os.environ.get("BOT_TOKEN"))
 
